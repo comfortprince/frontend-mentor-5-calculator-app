@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/League+Spartan">
+  <link rel="stylesheet" href="./output.css">  
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <main data-theme="theme-1" 
+    class="flex justify-center items-center h-screen p-4
+      theme-1:bg-m-very-dark-desaturated-blue
+      theme-2:bg-light-gray
+      theme-3:bg-m-very-dark-violet">
+    <!-- Calculator -->
+    <div class="w-52 flex flex-col gap-2">
+      <!-- Calc Theme Section -->
+      <section class="flex justify-between items-center">
+        <h1 class="text-xs">
+          calc
+        </h1>
+        <div class="flex justify-between items-center gap-2">
+          <div class="text-xxs font-bold">
+            THEME
+          </div>
+          <div>
+            <div data-theme="theme-1" 
+              class="min-h-1 min-w-6 p-0.5 flex rounded-full relative
+                theme-1:bg-tk-very-dark-desaturated-blue
+                theme-2:bg-grayish-red
+                theme-3:bg-tkpscr-very-dark-violet">
+              <span class="text-xxs font-bold absolute" style="top: -60%; left: 12%;">1</span>
+              <div id="theme-1-btn" class="rounded-full w-1.75 h-1.75 bg-red"></div>
+
+              <span class="text-xxs font-bold absolute" style="top: -60%; left: 42%;">2</span>
+              <div id="theme-2-btn" class="rounded-full w-1.75 h-1.75 bg-orange"></div> 
+              
+              <span class="text-xxs font-bold absolute" style="top: -60%; left: 72%;">3</span>
+              <div id="theme-3-btn" class="rounded-full w-1.75 h-1.75 bg-pure-cyan"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Display Section -->
+      <section data-theme="theme-1" id="display" 
+        class="rounded-sm w-full h-12 text-xl flex items-center justify-end px-2.5
+          theme-1:bg-s-very-dark-desaturated-blue
+          theme-2:bg-very-light-gray
+          theme-3:bg-tkpscr-very-dark-violet">
+        399,981
+      </section>
+
+      <!-- Keypad Section -->
+      <section data-theme="theme-1" 
+        class="p-2.5 rounded-sm flex flex-col gap-2
+          theme-1:bg-tk-very-dark-desaturated-blue
+          theme-2:bg-grayish-red
+          theme-3:bg-tkpscr-very-dark-violet">
+        <div class="flex justify-between gap-2">
+          <button data-theme="theme-1" id="7-key" class="key">7</button>
+          <button data-theme="theme-1" id="8-key" class="key">8</button>
+          <button data-theme="theme-1" id="9-key" class="key">9</button>
+          <button data-theme="theme-1" id="del-key" class="del-key">DEL</button>
+        </div>
+        <div class="flex justify-between gap-2">
+          <button data-theme="theme-1" id="4-key" class="key">4</button>
+          <button data-theme="theme-1" id="5-key" class="key">5</button>
+          <button data-theme="theme-1" id="6-key" class="key">6</button>
+          <button data-theme="theme-1" id="plus-key" class="key">+</button>
+        </div>
+        <div class="flex justify-between gap-2">
+          <button data-theme="theme-1" id="1-key" class="key">1</button>
+          <button data-theme="theme-1" id="2-key" class="key">2</button>
+          <button data-theme="theme-1" id="3-key" class="key">3</button>
+          <button data-theme="theme-1" id="minus-key" class="key">-</button>
+        </div>
+        <div class="flex justify-between gap-2">
+          <button data-theme="theme-1" id="dec-key" class="key">.</button>
+          <button data-theme="theme-1" id="zero-key" class="key">0</button>
+          <button data-theme="theme-1" id="div-key" class="key italic">/</button>
+          <button data-theme="theme-1" id="mul-key" class="key">x</button>
+        </div>
+        <div class="flex justify-between gap-2">
+          <button data-theme="theme-1" id="reset-key" class="reset-key">RESET</button>
+          <button data-theme="theme-1" id="equal-key" class="equal-key">=</button>
+        </div>
+      </section>
+    </div>
+    
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+  </main>
+
+  <script src="./index.js"></script>
+</body>
+</html>

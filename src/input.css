@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    *{
+        @apply theme-1:text-white theme-2:text-very-dark-grayish-yellow theme-3:text-light-yellow; 
+        font-family: "League Spartan", sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+    }
+}
+
+@layer components{
+    .del-key, .reset-key{
+        @apply rounded-md flex-1 h-6
+            theme-1:bg-kbg-desaturated-dark-blue theme-1:hover:bg-kbg-light-desaturated-dark-blue
+            theme-2:bg-dark-moderate-cyan theme-2:text-white
+            theme-3:bg-dark-violet theme-3:text-white;
+        box-shadow: 0px theme("width.key-shadow-width") theme("colors.kshdw-desaturated-dark-blue");
+        font-size: 20px;
+    }
+
+    .equal-key{
+        @apply rounded-md flex-1 h-6
+            theme-1:bg-red theme-1:hover:bg-light-red
+            theme-2:bg-orange theme-2:text-white
+            theme-3:bg-pure-cyan theme-3:text-very-dark-blue;
+        box-shadow: 0px theme("width.key-shadow-width") theme("colors.dark-red");
+        font-size: 20px;
+    }
+
+    .key{
+        @apply rounded-md flex-1 h-6
+            theme-1:bg-light-grayish-orange theme-1:hover:bg-lighter-grayish-orange theme-1:text-very-dark-grayish-blue
+            theme-2:bg-light-grayish-yellow theme-2:hover:bg-lighter-grayish-yellow theme-2:text-very-dark-grayish-yellow
+            theme-3:bg-very-dark-violet theme-3:text-light-yellow;
+        box-shadow: 0px theme("width.key-shadow-width") theme("colors.grayish-orange");
+        font-size: 28px;
+    }
+}
