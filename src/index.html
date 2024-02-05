@@ -52,13 +52,21 @@
       </section>
       
       <!-- Display Section -->
-      <section data-theme="theme-1" id="display" 
-        class="rounded-sm w-full h-12 text-xl flex items-center justify-end px-2.5
+      <section data-theme="theme-1" 
+        class="rounded-sm w-full h-12 text-xl text-end overflow-scroll
           theme-1:bg-s-very-dark-desaturated-blue
           theme-2:bg-very-light-gray
           theme-3:bg-tkpscr-very-dark-violet">
-        399,981
+          <span class="mx-2.5 w-full relative" style="top: 20%;" id="display">
+            399,981
+          </span>
       </section>
+
+      <!-- <input type="text" id="display" data-theme="theme-1" 
+        class="rounded-sm w-full h-12 text-xl flex items-center justify-end overflow-auto
+          theme-1:bg-s-very-dark-desaturated-blue
+          theme-2:bg-very-light-gray
+          theme-3:bg-tkpscr-very-dark-violet" readonly> -->
 
       <!-- Keypad Section -->
       <section data-theme="theme-1" 
@@ -67,32 +75,32 @@
           theme-2:bg-grayish-red
           theme-3:bg-tkpscr-very-dark-violet">
         <div class="flex justify-between gap-2">
-          <button data-theme="theme-1" id="7-key" class="key">7</button>
-          <button data-theme="theme-1" id="8-key" class="key">8</button>
-          <button data-theme="theme-1" id="9-key" class="key">9</button>
-          <button data-theme="theme-1" id="del-key" class="del-key">DEL</button>
+          <button data-theme="theme-1" id="7-key" class="key" onclick="updateExpr('7')" >7</button>
+          <button data-theme="theme-1" id="8-key" class="key" onclick="updateExpr('8')" >8</button>
+          <button data-theme="theme-1" id="9-key" class="key" onclick="updateExpr('9')" >9</button>
+          <button data-theme="theme-1" id="del-key" class="del-key" onclick="updateExpr('Delete')">DEL</button>
         </div>
         <div class="flex justify-between gap-2">
-          <button data-theme="theme-1" id="4-key" class="key">4</button>
-          <button data-theme="theme-1" id="5-key" class="key">5</button>
-          <button data-theme="theme-1" id="6-key" class="key">6</button>
-          <button data-theme="theme-1" id="plus-key" class="key">+</button>
+          <button data-theme="theme-1" id="4-key" class="key" onclick="updateExpr('4')">4</button>
+          <button data-theme="theme-1" id="5-key" class="key" onclick="updateExpr('5')">5</button>
+          <button data-theme="theme-1" id="6-key" class="key" onclick="updateExpr('6')">6</button>
+          <button data-theme="theme-1" id="plus-key" class="key" onclick="updateExpr('+')">+</button>
         </div>
         <div class="flex justify-between gap-2">
-          <button data-theme="theme-1" id="1-key" class="key">1</button>
-          <button data-theme="theme-1" id="2-key" class="key">2</button>
-          <button data-theme="theme-1" id="3-key" class="key">3</button>
-          <button data-theme="theme-1" id="minus-key" class="key">-</button>
+          <button data-theme="theme-1" id="1-key" class="key" onclick="updateExpr('1')">1</button>
+          <button data-theme="theme-1" id="2-key" class="key" onclick="updateExpr('2')">2</button>
+          <button data-theme="theme-1" id="3-key" class="key" onclick="updateExpr('3')">3</button>
+          <button data-theme="theme-1" id="minus-key" class="key" onclick="updateExpr('-')">-</button>
         </div>
         <div class="flex justify-between gap-2">
-          <button data-theme="theme-1" id="dec-key" class="key">.</button>
-          <button data-theme="theme-1" id="zero-key" class="key">0</button>
-          <button data-theme="theme-1" id="div-key" class="key italic">/</button>
-          <button data-theme="theme-1" id="mul-key" class="key">x</button>
+          <button data-theme="theme-1" id="dec-key" class="key" onclick="updateExpr('.')">.</button>
+          <button data-theme="theme-1" id="zero-key" class="key" onclick="updateExpr('0')">0</button>
+          <button data-theme="theme-1" id="div-key" class="key italic" onclick="updateExpr('/')">/</button>
+          <button data-theme="theme-1" id="mul-key" class="key" onclick="updateExpr('*')">x</button>
         </div>
         <div class="flex justify-between gap-2">
-          <button data-theme="theme-1" id="reset-key" class="reset-key">RESET</button>
-          <button data-theme="theme-1" id="equal-key" class="equal-key">=</button>
+          <button data-theme="theme-1" id="reset-key" class="reset-key" onclick="updateExpr('Escape')">RESET</button>
+          <button data-theme="theme-1" id="equal-key" class="equal-key" onclick="updateExpr('Enter')">=</button>
         </div>
       </section>
     </div>

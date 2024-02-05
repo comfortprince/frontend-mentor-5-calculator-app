@@ -39,6 +39,7 @@ module.exports = {
 
       // Keys
       "dark-moderate-cyan" : "hsl(185, 42%, 37%)",
+      "light-moderate-cyan" : "hsl(185, 42%, 43%)",
       "very-dark-cyan" : "hsl(185, 58%, 25%)",
 
       "orange" : "hsl(25, 98%, 40%)",
@@ -61,18 +62,23 @@ module.exports = {
 
       // Keys
       "dark-violet" : "hsl(281, 89%, 26%)",
+      "light-violet" : "hsl(281, 89%, 32%)",
       "vivid-magenta" : "hsl(285, 91%, 52%)",
 
       "pure-cyan" : "hsl(176, 100%, 44%)",
+      "light-pure-cyan" : "hsl(176, 100%, 52%)",
       "soft-cyan" : "hsl(177, 92%, 70%)",
 
       "very-dark-violet" : "hsl(268, 47%, 21%)",
+      "slightly-light-dark-violet" : "hsl(268, 47%, 41%)",
       "dark-magenta" : "hsl(290, 70%, 36%)",
 
       // Text
       "light-yellow" : "hsl(52, 100%, 62%)",
       "very-dark-blue": "hsl(198, 20%, 13%)",
       "white" : "hsl(0, 0%, 100%)"
+
+      // Shadow
     },
     extend: {
       fontSize : {
@@ -85,7 +91,6 @@ module.exports = {
       height : {
         "1.75" : "0.4375rem"
       },
-      
     },
   },
   plugins: [

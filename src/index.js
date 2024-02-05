@@ -1,3 +1,4 @@
+// THEME TOGGLER
 const THEME_BTN_1 = document.querySelector('#theme-1-btn');
 const THEME_BTN_2 = document.querySelector('#theme-2-btn');
 const THEME_BTN_3 = document.querySelector('#theme-3-btn');
@@ -29,3 +30,84 @@ function themeToggler(btn, themeId) {
 }
 
 themeToggler(THEME_BTN_1, "theme-1")
+
+// ARITHMETIC CALCULATOR
+let arithmetic_exptn = ""
+// display(arithmetic_exptn)
+
+const updateExpr = (key) => {
+    switch (key) {
+        case 'Enter':
+            const LARGEST_ANSWER = 900000000000000000000
+
+            if ( !validateArithmeticExpression(arithmetic_exptn) ) 
+                return
+
+            let answer = computeExpression(arithmetic_exptn)
+            answer = answer > LARGEST_ANSWER ? Infinity : answer
+            arithmetic_exptn = answer === Infinity ? "" : answer
+            
+            display(answer)
+
+            break;
+        
+        case 'Escape':
+            arithmetic_exptn = ""
+            display(arithmetic_exptn)
+            break;
+
+        case 'Delete':
+            if (arithmetic_exptn.length === 0)
+                return 
+        
+            arithmetic_exptn = arithmetic_exptn.substring(0, arithmetic_exptn.length - 1)
+            display(arithmetic_exptn)
+            break;
+
+        case 'Backspace':
+            if (arithmetic_exptn.length === 0)
+                return 
+        
+            arithmetic_exptn = arithmetic_exptn.substring(0, arithmetic_exptn.length - 1)
+            display(arithmetic_exptn)
+            break;
+    
+        default:
+            let tempExpression = arithmetic_exptn + key
+            arithmetic_exptn = validatePartialArithmeticExpression(tempExpression) ? tempExpression : arithmetic_exptn
+            display(arithmetic_exptn)
+            break;
+    }
+}
+
+window.addEventListener('keydown', (event) => {
+    const KEYS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-', '/', '*', '.', 'Backspace', 'Delete', 'Escape', 'Enter']
+    const PRESSED_KEY = event.key
+
+    if ( !KEYS.includes(PRESSED_KEY) )
+        return
+
+    updateExpr(PRESSED_KEY)
+})
+
+const computeExpression = (arithmetic_exptn) => {
+    return eval(arithmetic_exptn)
+}
+
+function display(str) {
+    const displaySpan = document.querySelector('#display')
+    displaySpan.innerHTML = str
+
+    const parentElement = displaySpan.parentElement
+    parentElement.scrollLeft = parentElement.scrollWidth
+}
+
+const validateArithmeticExpression = (expression) => {
+    const PATTERN = /^([-+]?[0-9]+(\.[0-9]+)?)([-+*/][0-9]+(\.[0-9]+)?)*$/
+    return PATTERN.test(expression)
+}
+
+const validatePartialArithmeticExpression = (expression) => {
+    const DUMMY_NUMERIC_VAL = "6"
+    return validateArithmeticExpression(expression + DUMMY_NUMERIC_VAL)
+}
